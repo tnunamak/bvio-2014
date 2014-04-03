@@ -19,10 +19,10 @@
 <div class="row">
     <div class="col-md-3">
         <!--<img data-src="holder.js/200x200" holder-fix>-->
-        <img width="200" height="200" src="http://www.thefruitcompany.com/images/products/fuji-apples-470.jpg">
+        <div class="rounded bordered" style="width: 250px; height: 250px; background: url('http://www.thefruitcompany.com/images/products/fuji-apples-470.jpg');" />
     </div>
     <div class="col-md-7">
-        <h3>Johnny's Apple</h3>
+        <h3>Johnny's Apples</h3>
         <p>It almost seems as if they’re blushing – and who can blame them? These Fuji Apples, grown right in our own orchards in the Hood River Valley of Oregon, have garnered so many compliments that they’re feeling a little embarrassed. But the accolades are well deserved for our biggest, freshest, and unblemished apples – as you’ll soon see when you choose them for your own home or for a much-appreciated gift.</p>
 
         <p>This gift arrives in a beautifully painted watercolor box. Perfect for storing personal treasures and keepsakes.</p>
@@ -46,17 +46,38 @@
     data-scope="https://www.googleapis.com/auth/plus.login">
   </span>
 </span>
+    {{ friends }}
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <h3>Reviews</h3>
 
         <div ng-repeat="review in reviews">
-            <span class="review">{{ review }}</span>
+            <span class="review">
+                <img style="padding-left: 0" data-src="holder.js/75x75" holder-fix>
+
+                <p style="display:inline; ">
+
+                    <ul class="tileMe" style="vertical-align: middle; margin: 0 5px 0 5px">
+                        <li ng-repeat="i in getNumber(review.RatingRange) track by $index" style="font-size: 1.2em;">
+                            <i ng-show="$index < review.Rating" class="glyphicon glyphicon-star" style="color: rgba(236, 205, 69, 1)"></i>
+                            <i ng-show="$index >= review.Rating" class="glyphicon glyphicon-star-empty" style="color: rgba(236, 205, 69, .5);"></i>
+                        </li>
+                    </ul>
+
+                    {{review.UserNickname}} <span ng-show="review.UserLocation">from {{review.UserLocation}}</span></p>
+
+                <p ng-bind-html="review.ReviewText"></p>
+            </span>
             <hr width="100%"/>
         </div>
 
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4">
         <h3>Social</h3> <small class="text-muted">what the internet is saying</small>
-
-
+        <div id="social-feed" social-feed>
+        </div>
     </div>
 </div>
 
