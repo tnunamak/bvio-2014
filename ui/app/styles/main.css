@@ -2,6 +2,7 @@
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+  background-image: url('../../images/whitey.png');
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -68,14 +69,27 @@ body {
   }
 }
 
-/* Ours */
-.review {
+.rounded, .review {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
+}
 
+.bordered {
+    border: 1px solid rgba(204, 204, 204, .5);
+}
+
+/* Ours */
+.review {
     margin: 0px;
-    padding: 10px;
-
     /*border: 1px solid rgba(204, 204, 204, .5);*/
+}
+
+.tileMe {
+    display: inline-block;
+}
+
+.tileMe li {
+    display: inline;
+    float: left;
 }
