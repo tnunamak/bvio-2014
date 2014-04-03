@@ -6,4 +6,8 @@ angular.module('bvio2014App')
     Reviews.get({productId: 342649}).$promise.then(function(data) {
       $scope.reviews = data.Results;
     });
+
+    $scope.getNumber = function(num) {
+      return new Array(num);
+    };
   });

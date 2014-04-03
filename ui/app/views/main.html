@@ -24,19 +24,31 @@
 </div>
 
 <div class="row">
-    <div class="col-md-offset-3 col-md-6">
+    <div class="col-md-8">
         <h3>Reviews</h3>
 
         <div ng-repeat="review in reviews">
             <span class="review">
-                <img data-src="holder.js/100x100" holder-fix>
-                {{ review }}
+                <img style="padding-left: 0" data-src="holder.js/75x75" holder-fix>
+
+                <p style="display:inline; ">
+
+                    <ul class="tileMe" style="vertical-align: middle; margin: 0 5px 0 5px">
+                        <li ng-repeat="i in getNumber(review.RatingRange) track by $index" style="font-size: 1.2em;">
+                            <i ng-show="$index < review.Rating" class="glyphicon glyphicon-star" style="color: rgba(236, 205, 69, 1)"></i>
+                            <i ng-show="$index >= review.Rating" class="glyphicon glyphicon-star-empty" style="color: rgba(236, 205, 69, .5);"></i>
+                        </li>
+                    </ul>
+
+                    {{review.UserNickname}} <span ng-show="review.UserLocation">from {{review.UserLocation}}</span></p>
+
+                <p ng-bind-html="review.ReviewText"></p>
             </span>
             <hr width="100%"/>
         </div>
 
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4">
         <h3>Social</h3> <small class="text-muted">what the internet is saying</small>
 
 
