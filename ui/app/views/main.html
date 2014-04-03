@@ -12,7 +12,7 @@
         <div class="rounded bordered" style="width: 250px; height: 250px; background: url('http://www.thefruitcompany.com/images/products/fuji-apples-470.jpg');" />
     </div>
     <div class="col-md-7">
-        <h3>Johnny's Apple</h3>
+        <h3>Johnny's Apples</h3>
         <p>It almost seems as if they’re blushing – and who can blame them? These Fuji Apples, grown right in our own orchards in the Hood River Valley of Oregon, have garnered so many compliments that they’re feeling a little embarrassed. But the accolades are well deserved for our biggest, freshest, and unblemished apples – as you’ll soon see when you choose them for your own home or for a much-appreciated gift.</p>
 
         <p>This gift arrives in a beautifully painted watercolor box. Perfect for storing personal treasures and keepsakes.</p>
@@ -28,7 +28,10 @@
         <h3>Reviews</h3>
 
         <div ng-repeat="review in reviews">
-            <span class="review">{{ review }}</span>
+            <span class="review">
+                <img data-src="holder.js/100x100" holder-fix>
+                {{ review }}
+            </span>
             <hr width="100%"/>
         </div>
 
