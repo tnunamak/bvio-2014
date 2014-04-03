@@ -5,7 +5,7 @@ angular.module('bvio2014App')
     return {
       templateUrl:"views/socialFeed.html",
 
-      link: function($scope, $element, $attrs) {
+      link: function($scope, $element, $attrs, $sce) {
         window.fm_ready = function(fx) {
           if (typeof $FM !== 'undefined' && typeof $FM.ready === 'function') {
             $FM.ready(fx);
@@ -26,7 +26,7 @@ angular.module('bvio2014App')
         fm_ready(function($, _) {
           console.log("feed magnet loaded");
 
-          var feed = $FM.Feed('social-content')
+          var feed = $FM.Feed('social-content');
 
           $scope.messages = [];
           feed.connect('new_update', updateFmData);
@@ -38,6 +38,12 @@ angular.module('bvio2014App')
           $scope.messages.push(data.update.data); // todo fix the order
           $scope.$apply();
         }
+
+        $scope.trustAnyways = function(input) {
+
+          return $sce.trustAsHtml(input);
+        };
+
       }
     };
   });

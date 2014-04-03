@@ -1,14 +1,6 @@
 <div ng-repeat="udata in messages | orderBy : udata.timestamp : false" ng-animate="animate">
     <img class="avatar" ng-src="{{udata.author.avatar}}"/>
-    {{udata.author.alias}}
-    <div class="author"> </div>
-    <div class="timestamp"> {{ udata.timestamp}}</div>
-    <div class="text">{{udata.text}}</div>
-    <div class="text" ng-if="{{udata.channel}}=='youtube'">
-        {{udata.teaser}}
-        <a ng-href="{{udata.permalink}}" target="_blank">Check it out!</a>
-    </div>
-    {{udata.video}}
-
-
+    <div class="author">{{udata.author.alias}} </div>
+    <div class="timestamp"> {{udata.timestamp}}</div>
+    <div class="text" ng-bind-html="udata.text"></div>
 </div>
