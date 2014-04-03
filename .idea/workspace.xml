@@ -2,14 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bfbc32ce-232d-4586-9231-3cecaf10eb3b" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
     </list>
     <ignored path="bvio-2014.iws" />
@@ -83,21 +75,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".editorconfig" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name=".editorconfig" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.editorconfig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="613">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
-              <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+            <state vertical-scroll-proportion="0.122349106" vertical-offset="0" max-vertical-offset="613">
+              <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -424,7 +416,7 @@
       <created>1396542542634</created>
       <updated>1396542542634</updated>
       <workItem from="1396542546458" duration="9000" />
-      <workItem from="1396542915462" duration="131000" />
+      <workItem from="1396542915462" duration="193000" />
     </task>
     <task id="LOCAL-00001" summary="Clean up repo">
       <created>1396543009319</created>
@@ -434,11 +426,19 @@
       <created>1396543020352</created>
       <updated>1396543020352</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Clean up repo (one more)">
+      <created>1396543052112</created>
+      <updated>1396543052112</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Still trying to cleanup">
+      <created>1396543101313</created>
+      <updated>1396543101313</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140000" />
+    <option name="totallyTimeSpent" value="202000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="22" width="1676" height="1028" extended-state="6" />
@@ -488,7 +488,9 @@
       <TodoPanelSettings />
     </option>
     <MESSAGE value="Clean up repo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Clean up repo" />
+    <MESSAGE value="Clean up repo (one more)" />
+    <MESSAGE value="Still trying to cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Still trying to cleanup" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -506,18 +508,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.editorconfig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="931">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.122349106" vertical-offset="0" max-vertical-offset="613">
+          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
           <folding />
         </state>
       </provider>
