@@ -1,0 +1,32 @@
+.animate-enter,
+.animate-leave
+{
+    -webkit-transition: 450ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -moz-transition: 450ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -ms-transition: 450ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -o-transition: 450ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    transition: 450ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    position: relative;
+    display: block;
+}
+
+.animate-enter.animate-enter-active,
+.animate-leave {
+    opacity: 1;
+    right: 0;
+    height: 30px;
+}
+
+.animate-leave.animate-leave-active,
+.animate-enter {
+    opacity: 0;
+    right: -50px;
+    height: 0px;
+}
+
+.widget { width: 240px; background: ghostwhite; padding: 20px; }
+.fm-update { margin-bottom: 20px; border-bottom: 1px #ddd; }
+.avatar { float: left; margin-right: 10px; height: 48px; width: 48px; }
+.author { font-size: 1.2em; padding-top: 5px; }
+.timestamp { font-size: .8em; color: #777; }
+.text { margin-top: 20px; }
