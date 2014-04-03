@@ -4,8 +4,8 @@ angular.module('bvio2014App')
   .controller('MainCtrl', function($scope, $resource, $http) {
 
     function checkGooglePlusUser(fx) {
-      if (typeof googlePlusUser !== 'undefined') {
-        $scope.googlePlusUser = googlePlusUser;
+      if (typeof googlePlusToken !== 'undefined') {
+        $scope.googlePlusToken = googlePlusToken;
         fx();
       } else {
         window.setTimeout(function() { checkGooglePlusUser.call(null, fx); }, 50);
@@ -13,7 +13,7 @@ angular.module('bvio2014App')
     }
 
     checkGooglePlusUser(function() {
-
+      console.log('running g+ code');
     });
 
     $scope.friends = ['Bourdoisea','zssofi','elle7373','Irmooc'];
