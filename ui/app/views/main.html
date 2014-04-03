@@ -1,36 +1,45 @@
 <div class="header">
   <ul class="nav nav-pills pull-right">
-    <li class="active"><a ng-href="#">Home</a></li>
-    <li><a ng-href="#">About</a></li>
-    <li><a ng-href="#">Contact</a></li>
+    <li><a ng-href="#">My Account</a></li>
+    <li><a ng-href="#"><i class="glyphicon glyphicon-shopping-cart"></i> Shopping Cart</a></li>
   </ul>
   <h3 class="text-muted">bvio 2014</h3>
 </div>
 
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+<div class="row">
+    <div class="col-md-3">
+        <!--<img data-src="holder.js/200x200" holder-fix>-->
+        <img width="200" height="200" src="http://www.thefruitcompany.com/images/products/fuji-apples-470.jpg">
+    </div>
+    <div class="col-md-7">
+        <h3>Johnny's Apple</h3>
+        <p>It almost seems as if they’re blushing – and who can blame them? These Fuji Apples, grown right in our own orchards in the Hood River Valley of Oregon, have garnered so many compliments that they’re feeling a little embarrassed. But the accolades are well deserved for our biggest, freshest, and unblemished apples – as you’ll soon see when you choose them for your own home or for a much-appreciated gift.</p>
+
+        <p>This gift arrives in a beautifully painted watercolor box. Perfect for storing personal treasures and keepsakes.</p>
+    </div>
+    <div class="col-md-2">
+        <h3>$10.99</h3>
+        <a href="#" class="btn btn-lg btn-primary" role="button">Add to Cart</a>
+    </div>
 </div>
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
+<div class="row">
+    <div class="col-md-offset-3 col-md-6">
+        <h3>Reviews</h3>
 
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
+        <div ng-repeat="review in reviews">
+            <span class="review">{{ review }}</span>
+            <hr width="100%"/>
+        </div>
 
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
+    </div>
+    <div class="col-md-3">
+        <h3>Social</h3> <small class="text-muted">what the internet is saying</small>
+
+
+    </div>
 </div>
 
 <div class="footer">
-  <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+  <p><span class="glyphicon glyphicon-heart"></span> from Social Reviews</p>
 </div>
