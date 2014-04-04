@@ -17,7 +17,7 @@
 
 
 <div class="row">
-    <div class="col-md-3" style="padding-left: 0">
+    <div class="col-md-3">
         <!--<img data-src="holder.js/200x200" holder-fix>-->
         <div class="rounded bordered" style="width: 250px; height: 250px; background: url('http://slimages.macys.com/is/image/MCY/products//2/optimized/1654312_fpx.tif?$filterlrg$&wid=330&hei=404&fit=fit,1');" />
     </div>
@@ -28,7 +28,7 @@
         <p>This gift arrives in a beautifully painted watercolor box. Perfect for storing personal treasures and keepsakes.</p>
     </div>
     <div class="col-md-2">
-        <h3>$10.99</h3>
+        <h3>$78.50</h3>
         <a href="#" class="btn btn-lg btn-primary" role="button">Add to Cart</a>
     </div>
 </div>
@@ -57,23 +57,25 @@
                 <span class="label gplabel">to see friends' reviews</span>
             </div>
             <div ng-repeat="review in reviews" ng-animate=" 'animate' ">
-            <span class="review" >
+            <span class="review">
                 <img ng-show="review.friend" style="padding-left: 0" ng-src="{{review.friend.image.url}}" holder-fix>
 
-                <h4 style="display: inline">{{review.Title}}</h4>
+                <!--<h4 style="display:inline">{{review.Title}}</h4>-->
 
-                <p style="display:inline; ">
-
-                    <ul class="tileMe" style="vertical-align: middle; margin: 0 5px 0 5px">
+                <p style="display:inline;">
+                    {{review.UserNickname}} <span ng-show="review.UserLocation">from {{review.UserLocation}}</span>
+                    <ul class="tileMe" style="vertical-align: middle; margin: 0 5px 0 -30px">
                         <li ng-repeat="i in getNumber(review.RatingRange) track by $index" style="font-size: 1.2em;">
                             <i ng-show="$index < review.Rating" class="glyphicon glyphicon-star" style="color: rgba(236, 205, 69, 1)"></i>
                             <i ng-show="$index >= review.Rating" class="glyphicon glyphicon-star-empty" style="color: rgba(236, 205, 69, .5);"></i>
                         </li>
                     </ul>
+                    <span style="font-size: large;" class="pull-right"><strong>{{review.Title}}</strong></span>
+                <p></p>
 
-                    {{review.UserNickname}} <span ng-show="review.UserLocation">from {{review.UserLocation}}</span></p>
-
-                <p ng-bind-html="review.ReviewText"></p>
+                <p>
+                    <span ng-bind-html="review.ReviewText"></span>
+                </p>
                 <div ng-show="review.friend"><small>{{ review.UserNickname }} also reviewed <a href="#">this</a></small></div>
             </span>
                 <hr width="100%"/>
@@ -82,6 +84,7 @@
     </div>
     <div class="col-md-4">
         <div class="row"  ng-show="plusLoaded">
+
             <div class="well">
                 <h4 style="margin-top:0; margin-bottom:0">Other product reviews by your friends</h4>
                 <div id="friend-feed">
