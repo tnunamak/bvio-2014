@@ -5,7 +5,7 @@ angular.module('bvio2014App')
     return {
       templateUrl:"views/socialFeed.html",
 
-      link: function($scope, $element, $attrs, $sce) {
+      link: function($scope, $element, $attrs) {
         window.fm_ready = function(fx) {
           if (typeof $FM !== 'undefined' && typeof $FM.ready === 'function') {
             $FM.ready(fx);
@@ -40,7 +40,12 @@ angular.module('bvio2014App')
           $scope.messages.push(data.update.data); // todo fix the order
           $scope.$apply();
         }
-
       }
     };
   });
+
+angular.module('bvio2014App').filter('timeFromNow', function() {
+  return function(date) {
+    return moment(date * 1000).fromNow();
+  }
+});

@@ -33,7 +33,6 @@
     </div>
 </div>
 <br />
-<br />
 <div class="row">
     <div class="col-md-8">
         <div class="well">
@@ -75,6 +74,7 @@
                     {{review.UserNickname}} <span ng-show="review.UserLocation">from {{review.UserLocation}}</span></p>
 
                 <p ng-bind-html="review.ReviewText"></p>
+                <div ng-show="review.friend"><small>{{ review.UserNickname }} also reviewed <a href="#">this</a></small></div>
             </span>
                 <hr width="100%"/>
             </div>
@@ -83,16 +83,24 @@
     <div class="col-md-4">
         <div class="row">
             <div class="well">
-                <h3 style="margin-top:0px;">Friends</h3> <small class="text-muted">what your friends are talking about</small>
+                <h3 style="margin-top:0; margin-bottom:0"></h3><small class="text-muted">other product reviews by your friends</small>
                 <div id="friend-feed">
+                    elle7373 reviewed <a href="#">Urban Decay Naked Skin Liquid...</a>
+                    <p></p>
+                    Bourdoisea reviewed <a href="#">Estée Lauder Double Wear...</a>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="well">
-                <h3 style="margin-top:0px;">Social</h3> <small class="text-muted">what the internet is saying</small>
-                <div id="social-feed" social-feed>
-                </div>
+                <h3 style="margin-top:0; margin-bottom:0">Social</h3><small class="text-muted">what the internet is saying</small>
+                <!--<h3>on twitter</h3>-->
+                    <div id="social-feed" social-feed>
+                    </div>
+                <!--<h3>on youtube</h3>-->
+                    <!--<div id="youtube-feed">-->
+                        <!--Lorem Ipsum blah blah foo-->
+                    <!--</div>-->
             </div>
         </div>
     </div>
