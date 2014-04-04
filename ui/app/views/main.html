@@ -63,7 +63,7 @@
         </div>
         <div ng-repeat="review in reviews" ng-animate=" 'animate' ">
             <span class="review" >
-                <img ng-show="review.friend" style="padding-left: 0" src="{{review.friend.image.url}}" holder-fix>
+                <img ng-show="review.friend" style="padding-left: 0" ng-src="{{review.friend.image.url}}" holder-fix>
 
                 <h4 style="display: inline">{{review.Title}}</h4>
 
