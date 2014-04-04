@@ -32,14 +32,11 @@
         <a href="#" class="btn btn-lg btn-primary" role="button">Add to Cart</a>
     </div>
 </div>
-
-<div class="row">
-    <div class="col-md-offset-3 col-md-6">
-</div>
-
+<br />
+<br />
 <div class="row">
     <div class="col-md-8">
-        <div>
+        <div class="well">
             <h3 style="display: inline">Reviews</h3>
 
             <div id="gSignInWrapper" ng-hide="plusLoaded" ng-animate=" 'animate' ">
@@ -60,33 +57,44 @@
 
                 <span class="label gplabel">to see friends' reviews</span>
             </div>
-        </div>
-        <div ng-repeat="review in reviews" ng-animate=" 'animate' ">
-            <span class="review" >
-                <img ng-show="review.friend" style="padding-left: 0" src="{{review.friend.image.url}}" holder-fix>
+            <div ng-repeat="review in reviews" ng-animate=" 'animate' ">
+                <span class="review" >
+                    <img ng-show="review.friend" style="padding-left: 0" src="{{review.friend.image.url}}" holder-fix>
 
-                <h4 style="display: inline">{{review.Title}}</h4>
+                    <h4 style="display: inline">{{review.Title}}</h4>
 
-                <p style="display:inline; ">
+                    <p style="display:inline; ">
 
-                    <ul class="tileMe" style="vertical-align: middle; margin: 0 5px 0 5px">
-                        <li ng-repeat="i in getNumber(review.RatingRange) track by $index" style="font-size: 1.2em;">
-                            <i ng-show="$index < review.Rating" class="glyphicon glyphicon-star" style="color: rgba(236, 205, 69, 1)"></i>
-                            <i ng-show="$index >= review.Rating" class="glyphicon glyphicon-star-empty" style="color: rgba(236, 205, 69, .5);"></i>
-                        </li>
-                    </ul>
+                        <ul class="tileMe" style="vertical-align: middle; margin: 0 5px 0 5px">
+                            <li ng-repeat="i in getNumber(review.RatingRange) track by $index" style="font-size: 1.2em;">
+                                <i ng-show="$index < review.Rating" class="glyphicon glyphicon-star" style="color: rgba(236, 205, 69, 1)"></i>
+                                <i ng-show="$index >= review.Rating" class="glyphicon glyphicon-star-empty" style="color: rgba(236, 205, 69, .5);"></i>
+                            </li>
+                        </ul>
 
-                    {{review.UserNickname}} <span ng-show="review.UserLocation">from {{review.UserLocation}}</span></p>
+                        {{review.UserNickname}} <span ng-show="review.UserLocation">from {{review.UserLocation}}</span></p>
 
-                <p ng-bind-html="review.ReviewText"></p>
-            </span>
-            <hr width="100%"/>
+                    <p ng-bind-html="review.ReviewText"></p>
+                </span>
+                <hr width="100%"/>
+            </div>
         </div>
 
     </div>
     <div class="col-md-4">
-        <h3>Social</h3> <small class="text-muted">what the internet is saying</small>
-        <div id="social-feed" social-feed>
+        <div class="row">
+            <div class="well">
+                <h3 style="margin-top:0px;">Friends</h3> <small class="text-muted">what your friends are talking about</small>
+                <div id="friend-feed">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="well">
+                <h3 style="margin-top:0px;">Social</h3> <small class="text-muted">what the internet is saying</small>
+                <div id="social-feed" social-feed>
+                </div>
+            </div>
         </div>
     </div>
 </div>

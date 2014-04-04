@@ -34,9 +34,20 @@ angular.module('bvio2014App')
       '113784330842650449575': 'Irmooc'
     };
 
-    var Reviews = $resource('http://10.247.3.114:8080/data/reviews.json?productId=:productId&friends=:friends');
+    var Reviews = $resource('http://192.168.1.152:8080/data/reviews.json?productId=:productId&friends=:friends');
 
     loadReviews();
+
+    var FriendsOtherReviews = $resource('http://localhost:8080/data/author_reviews.json?userId=rich&productId=:productId&friends=:friends');
+
+    FriendsOtherReviews.get({productId: 342649, friends: mapFriends($scope.friends)}).$promise.then(function(data) {
+      $scope.friendReviews = data.Results;
+      console.log("loaded friend reviews");
+    });
+
+    /*$http.get('/someUrl').success(function(data) {
+      $scope.friends = data;
+    });*/
 
     function loadReviews() {
       Reviews.get({productId: 342649, friends: mapFriends($scope.friends)}).$promise.then(function(data) {

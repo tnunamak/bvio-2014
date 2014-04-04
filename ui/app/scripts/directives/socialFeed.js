@@ -31,18 +31,15 @@ angular.module('bvio2014App')
           $scope.messages = [];
           feed.connect('new_update', updateFmData);
 
-          feed.get();
+          feed.get({
+            'limit':7
+          });
         });
 
         function updateFmData(self, data) {
           $scope.messages.push(data.update.data); // todo fix the order
           $scope.$apply();
         }
-
-        $scope.trustAnyways = function(input) {
-
-          return $sce.trustAsHtml(input);
-        };
 
       }
     };
