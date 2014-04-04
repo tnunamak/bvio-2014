@@ -4,6 +4,7 @@ angular.module('bvio2014App')
   .controller('MainCtrl', function($scope, $resource, $http) {
 
     var loadPlus = $.Deferred();
+    var SERVER_HOST = '10.247.2.132:9000';
 
     function checkGooglePlusUser() {
       if(window.googlePlusLoaded !== undefined && window.googlePlusLoaded) {
@@ -34,20 +35,16 @@ angular.module('bvio2014App')
       '113784330842650449575': 'Irmooc'
     };
 
-    var Reviews = $resource('http://192.168.1.152:8080/data/reviews.json?productId=:productId&friends=:friends');
+    var Reviews = $resource('http://'+SERVER_HOST+'/data/reviews.json?productId=:productId&friends=:friends');
 
     loadReviews();
 
-    var FriendsOtherReviews = $resource('http://localhost:8080/data/author_reviews.json?userId=rich&productId=:productId&friends=:friends');
+    var FriendsOtherReviews = $resource('http://'+SERVER_HOST+'/data/author_reviews.json?userId=rich&productId=:productId&friends=:friends');
 
     FriendsOtherReviews.get({productId: 342649, friends: mapFriends($scope.friends)}).$promise.then(function(data) {
       $scope.friendReviews = data.Results;
       console.log("loaded friend reviews");
     });
-
-    /*$http.get('/someUrl').success(function(data) {
-      $scope.friends = data;
-    });*/
 
     function loadReviews() {
       Reviews.get({productId: 342649, friends: mapFriends($scope.friends)}).$promise.then(function(data) {
