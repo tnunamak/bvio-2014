@@ -10,7 +10,7 @@ angular.module('bvio2014App')
           if (typeof $FM !== 'undefined' && typeof $FM.ready === 'function') {
             $FM.ready(fx);
           } else {
-            window.setTimeout(function() { fm_ready.call(null, fx); }, 50);
+            window.setTimeout(function() { fm_ready.call(null, fx); }, 150);
           }
         };
 

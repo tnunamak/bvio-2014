@@ -56,7 +56,7 @@
 
         <div ng-repeat="review in reviews">
             <span class="review">
-                <img style="padding-left: 0" data-src="holder.js/75x75" holder-fix>
+                <img ng-show="review.byFriend" style="padding-left: 0" src="{{review.byFriend.photoUrl}}" holder-fix>
 
                 <p style="display:inline; ">
 

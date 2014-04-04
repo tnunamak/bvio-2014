@@ -2,7 +2,9 @@ function signinCallback(authResult) {
   if (authResult['status']['signed_in']) {
     console.log('user logged in');
 
-    window.googlePlusToken = authResult['id_token'];
+    gapi.auth.setToken(authResult);
+
+    window.googlePlusLoaded = true;
 
     // Update the app to reflect a signed in user
     // Hide the sign-in button now that the user is authorized, for example:
