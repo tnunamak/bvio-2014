@@ -8,6 +8,7 @@ angular.module('bvio2014App')
     function checkGooglePlusUser() {
       if(window.googlePlusLoaded !== undefined && window.googlePlusLoaded) {
         gapi.client.load('plus', 'v1', function() {
+          $scope.plusLoaded = true;
           loadPlus.resolve();
         });
       } else {
@@ -20,33 +21,47 @@ angular.module('bvio2014App')
     loadPlus.then(function() {
       var friendsReq = gapi.client.plus.people.list({userId: 'me', collection: 'visible'}); //todo connected??
       friendsReq.execute(function(friends) {
-        var friends = (friends.result && friends.result.items) || [];
-        $scope.friends = _.map(friends, function(friend) {
-          return friend.id;
-        });
+        $scope.friends = (friends.result && friends.result.items) || [];
         $scope.$apply();
+        loadReviews();
       });
     });
 
     var friendMap = {
-      112797171718824861677: 'Bourdoisea',
-      114302105620839523772: 'zssofi',
-      106386498627889393658: 'elle7373',
-      113784330842650449575: 'Irmooc'
+      '112797171718824861677': 'Bourdoisea',
+      '114302105620839523772': 'zssofi',
+      '106386498627889393658': 'elle7373',
+      '113784330842650449575': 'Irmooc'
     };
 
-    var Reviews = $resource('http://10.247.2.132:9000/data/reviews.json?productId=:productId&friends=:friends');
+    var Reviews = $resource('http://10.247.3.114:8080/data/reviews.json?productId=:productId&friends=:friends');
 
-    Reviews.get({productId: 342649, friends: mapFriends($scope.friends)}).$promise.then(function(data) {
-      $scope.reviews = data.Results;
-    });
+    loadReviews();
+
+    function loadReviews() {
+      Reviews.get({productId: 342649, friends: mapFriends($scope.friends)}).$promise.then(function(data) {
+        $scope.reviews = data.Results;
+
+        _.each($scope.reviews, function(review) {
+          review.friend = _.find($scope.friends, function(friend){
+            return friendMap[friend.id] === review.UserNickname;
+          });
+        });
+      });
+    }
 
     $scope.getNumber = function(num) {
       return new Array(num);
     };
 
+    function mapFriendsToIds(friends) {
+      return _.map(friends, function(friend) {
+        return friend.id;
+      });
+    }
+
     function mapFriends(friends) {
-      return _.compact(_.map(friends, function(friend) {
+      return _.compact(_.map(mapFriendsToIds(friends), function(friend) {
         return friendMap[friend];
       }));
     }

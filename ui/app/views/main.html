@@ -19,11 +19,11 @@
 <div class="row">
     <div class="col-md-3">
         <!--<img data-src="holder.js/200x200" holder-fix>-->
-        <div class="rounded bordered" style="width: 250px; height: 250px; background: url('http://www.thefruitcompany.com/images/products/fuji-apples-470.jpg');" />
+        <div class="rounded bordered" style="width: 250px; height: 250px; background: url('http://slimages.macys.com/is/image/MCY/products//2/optimized/1654312_fpx.tif?$filterlrg$&wid=330&hei=404&fit=fit,1');" />
     </div>
     <div class="col-md-7">
-        <h3>Johnny's Apples</h3>
-        <p>It almost seems as if they’re blushing – and who can blame them? These Fuji Apples, grown right in our own orchards in the Hood River Valley of Oregon, have garnered so many compliments that they’re feeling a little embarrassed. But the accolades are well deserved for our biggest, freshest, and unblemished apples – as you’ll soon see when you choose them for your own home or for a much-appreciated gift.</p>
+        <h3>Clinique 3-Step Skin Care System for All Skin Types</h3>
+        <p>Clinique's 3 step system of cleanse, exfoliate, moisturize gets any skin clear, radiant and glowing. In about 2 weeks, Skin becomes a perfect canvas for treatments and makeup that follow.</p>
 
         <p>This gift arrives in a beautifully painted watercolor box. Perfect for storing personal treasures and keepsakes.</p>
     </div>
@@ -35,28 +35,37 @@
 
 <div class="row">
     <div class="col-md-offset-3 col-md-6">
-
-    <span id="signinButton">
-        <!-- gpljus button -->
-  <span
-    class="g-signin"
-    data-callback="signinCallback"
-    data-clientid="82267265013.apps.googleusercontent.com"
-    data-cookiepolicy="single_host_origin"
-    data-requestvisibleactions="http://schemas.google.com/AddActivity"
-    data-scope="https://www.googleapis.com/auth/plus.login">
-  </span>
-</span>
-    {{ friends }}
 </div>
 
 <div class="row">
     <div class="col-md-8">
-        <h3>Reviews</h3>
+        <div>
+            <h3 style="display: inline">Reviews</h3>
 
-        <div ng-repeat="review in reviews">
-            <span class="review">
-                <img ng-show="review.byFriend" style="padding-left: 0" src="{{review.byFriend.photoUrl}}" holder-fix>
+            <div id="gSignInWrapper" ng-hide="plusLoaded" ng-animate=" 'animate' ">
+                <span class="label gplabel">Sign in with</span>
+                <button id="customBtn" style="padding: 0; border-style: none"
+                class="g-signin customGPlusSignIn"
+                data-callback="signinCallback"
+                data-clientid="82267265013.apps.googleusercontent.com"
+                data-cookiepolicy="single_host_origin"
+                data-requestvisibleactions="http://schemas.google.com/AddActivity"
+                data-scope="https://www.googleapis.com/auth/plus.login">
+                <img
+                     src="images/google-plus-logo_no_red.png"
+                     alt="g+ signin"
+                     width="25"
+                     height="25"/>
+                </button>
+
+                <span class="label gplabel">to see friends' reviews</span>
+            </div>
+        </div>
+        <div ng-repeat="review in reviews" ng-animate=" 'animate' ">
+            <span class="review" >
+                <img ng-show="review.friend" style="padding-left: 0" src="{{review.friend.image.url}}" holder-fix>
+
+                <h4 style="display: inline">{{review.Title}}</h4>
 
                 <p style="display:inline; ">
 

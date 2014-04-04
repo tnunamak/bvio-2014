@@ -93,3 +93,30 @@ body {
     display: inline;
     float: left;
 }
+
+
+/* SIGN IN BUTTON IMAGE */
+
+.gplabel {
+    color: black !important;
+}
+
+.animate-enter {
+    -webkit-transition: 1s linear all; /* Chrome */
+    transition: 1s linear all;
+    opacity: 0;
+}
+
+.animate-enter.animate-enter-active {
+    opacity: 1;
+}
+
+.animate-leave {
+    -webkit-transition: 1s linear all; /* Chrome */
+    transition: 1s linear all;
+    opacity: 1;
+}
+
+.animate-leave.animate-leave-active {
+    opacity: 0;
+}
